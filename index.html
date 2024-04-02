@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="./assets/bunny-logo.png" alt="move it logo" height="30"> Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About me</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" aria-expanded="false">Portfolio</a>
+                    <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
+                        <li><a class="dropdown-item" href="#">Coding projects</a></li>
+                        <li><a class="dropdown-item" href="#">Websites managed</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="https://github.com/bunnydajiu?tab=repositories" onclick="return confirmExit(event)">GitHub</a></li>
+                        <li><a class="dropdown-item" href="https://www.behance.net/bunnydajiu/projects" onclick="return confirmExit(event)">Illustrations & graphic works</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Curriculum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacts">Contacts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+<script>
+    function confirmExit(event) {
+        if (!confirm("Are you sure you want to leave this page?")) {
+            event.preventDefault(); // Prevent default link behavior if user cancels
+            return false;
+        }
+        // If the user confirms, no need to return anything here.
+    }
+
+    // Manual initialization of dropdown using vanilla JavaScript
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.dropdown-toggle').forEach(function (dropdownToggle) {
+            dropdownToggle.addEventListener('click', function () {
+                var dropdownMenu = this.nextElementSibling;
+                if (!dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.add('show');
+                    dropdownMenu.setAttribute('aria-expanded', 'true');
+                } else {
+                    dropdownMenu.classList.remove('show');
+                    dropdownMenu.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    });
+</script>
+
+<!--cover-->
+<div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden ">
+  <div class="my-3 p-3">
+    <h1 class="h1font">Letizia Ferrari</h1>
+    <p class="lead">Web developer</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+  <div class="bg-body shadow-sm mx-auto" style="border-radius: 21px 21px 0 0; ">
+    <div class="px-4 py-5 my-5 text-center">
+      <img class="d-block mx-auto mb-4 rounded-circle" src="./assets/myself.png" alt="me" width="150" height="150">
+      <h2 class="display-6 fw-bold text-body-emphasis">Ciao.</h2>
+      <div class="col-lg-9 mx-auto">
+        <p class="lead mb-4 font">My name is Letizia, I'm from Italy and I'm studying to become a web developer to create amazing and aesthetically pleasing websites.<br>
+          I also enjoy videogames and fantasy artworks. ❤️
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col py-5 align-self-center"><span class="border border-light-subtle"></span>
+  <div class="dropdown-menu position-static d-flex flex-column flex-lg-row align-items-stretch justify-content-start p-3 rounded-3 shadow-lg border border-light-subtle" data-bs-theme="light">
+      <ul class="list-unstyled d-flex flex-column gap-2 ">
+        <li>
+          <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-2 py-2 px-3 lh-sm text-start">
+          <img src="assets/file-earmark-code.svg" width="24" height="24">
+            <div>
+              <strong class="d-block">Coding skills</strong>
+              CSS, HTML, Javascript, PHP, Bootstrap, Wordpress, Altervista
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-hover-light rounded-2 d-flex align-items-center gap-2 py-2 px-3 lh-sm text-start">
+            <img src="assets/palette.svg" width="24" height="24">
+            <div>
+              <strong class="d-block">Graphic and editing skills</strong>
+              Adobe Photoshop - Illustrator - InDesign - Premiere, DaVinci Resolve, GIMP, Canva
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-hover-light rounded-2 d-flex align-items-center gap-2 py-2 px-3 lh-sm text-start">
+            <img src="assets/brush.svg" width="24" height="24">
+            <div>
+              <strong class="d-block">Illustration skills
+              </strong>
+              Digital and traditional art
+              <br>Krita, Paint Tool SAI, Manga Studio
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="btn btn-hover-light rounded-2 d-flex align-items-center gap-2 py-2 px-3 lh-sm text-start">
+            <img src="assets/laptop.svg" width="24" height="24">
+            <div>
+              <strong class="d-block">Social media and website management skills
+              </strong>
+              Facebook, Instagram, YouTube, Wordpress, Fandom Wiki, SEO, Newsletter, Editor & Newser
+            </div>
+          </a>
+        </li>
+      </ul>
+</div>
+</div>
+</div>
+
+<!-- Contact form -->
+<div id="contacts">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="center-vertically">
+              <div>
+                <h2>Contacts</h2>
+                <p>
+                    You can use the contact form if you wish to contact me, otherwise you can check my social pages to inbox me, or you can write me an e-mail at:<br><br>
+                    <b>bunnydajiu@gmail.com</b>
+                </p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="contact-box">
+                <h2>Contact me</h2>
+                <form action="send_email.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-j+2nWTQvB3Xv8cc/bZBw2QdLt3Q8g9bJajHl/czJUX2+T7ak6N8q5nyWmIfno4o0" crossorigin="anonymous"></script>
+
+<!-- Footer -->
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary">© 2024 BunnyDajiu<br> <small>Done with Bootstrap, CSS and Js</small></span>
+        </div>
+    
+        <ul class="nav col-md-5 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-body-secondary" href="https://github.com/bunnydajiu"><svg class="bi" width="24" height="24"></svg><img src="assets/github.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/letiziaferrari94/"><svg class="bi" width="24" height="24"></svg><img src="assets/linkedin.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.behance.net/bunnydajiu"><svg class="bi" width="24" height="24"></svg><img src="assets/behance.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/bunnydajiu.art/"><svg class="bi" width="24" height="24"></svg><img src="assets/instagram.svg" width="24" height="24"></a></li>
+        </ul>
+      </footer>
+    </div>
+    <!-- Include Bootstrap's JavaScript bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
