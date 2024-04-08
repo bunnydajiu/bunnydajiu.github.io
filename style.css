@@ -12,6 +12,11 @@
   font-size: 80px;
  }
 
+ /* Bootstrap 5 tweak: do not underline links */
+a:not([class*="btn-outline-secondary"]) {
+    text-decoration: none;
+}
+
  .contact-box {
     max-width: 500px;
     padding: 20px;
