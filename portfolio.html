@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <div id="interactive-background"></div>
 <!-- Navbar -->
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -37,7 +37,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="portfolioDropdown" role="button" aria-expanded="false">Portfolio</a>
                     <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
-                        <li><a class="dropdown-item" href="#portfolio">Coding projects</a></li>
+                        <li><a class="dropdown-item" href="#projects">Coding projects</a></li>
                         <li><a class="dropdown-item" href="#">Websites managed</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="https://github.com/bunnydajiu?tab=repositories" onclick="return confirmExit(event)">GitHub</a></li>
@@ -56,37 +56,12 @@
 </nav>
 <!-- END Navbar -->
 </header>
-<script>
-    function confirmExit(event) {
-        if (!confirm("Are you sure you want to leave this page?")) {
-            event.preventDefault(); // Prevent default link behavior if user cancels
-            return false;
-        }
-        // If the user confirms, no need to return anything here.
-    }
-
-    // Manual initialization of dropdown using vanilla JavaScript
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll('.dropdown-toggle').forEach(function (dropdownToggle) {
-            dropdownToggle.addEventListener('click', function () {
-                var dropdownMenu = this.nextElementSibling;
-                if (!dropdownMenu.classList.contains('show')) {
-                    dropdownMenu.classList.add('show');
-                    dropdownMenu.setAttribute('aria-expanded', 'true');
-                } else {
-                    dropdownMenu.classList.remove('show');
-                    dropdownMenu.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-    });
-</script>
 
 <!--About me-->
-<div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden ">
+<div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden ">
   <div class="my-3 p-3">
     <h1 class="h1font">Letizia Ferrari</h1>
-    <p class="lead">Web developer</p>
+    <p class="lead">Web designer & Web developer</p>
   </div>
   <div class="container">
     <div class="row">
@@ -96,7 +71,7 @@
       <img class="d-block mx-auto mb-4 rounded-circle" src="./assets/myself.png" alt="me" width="150" height="150">
       <h2 class="display-6 fw-bold text-body-emphasis">Ciao.</h2>
       <div class="col-lg-9 mx-auto">
-        <p class="lead mb-4 font">My name is Letizia, I'm from Italy and I'm studying to become a web developer to create amazing and aesthetically pleasing websites.<br>
+        <p class="lead2 mb-4 font">My name is Letizia, I'm from Italy and I'm a Web designer & Web developer. My dream is to create amazing and aesthetically pleasing websites.<br>
           I also enjoy videogames and fantasy artworks. ❤️
         </p>
       </div>
@@ -105,7 +80,7 @@
 </div>
 
 <!-- My skills -->
-<div class="col py-5 align-self-center"><span class="border border-light-subtle"></span>
+<div class="col py-5 align-self-center">
   <div class="dropdown-menu position-static d-flex flex-column flex-lg-row align-items-stretch justify-content-start p-3 rounded-3 shadow-lg border border-light-subtle" data-bs-theme="light">
       <ul class="list-unstyled d-flex flex-column gap-2 ">
         <li>
@@ -159,122 +134,77 @@
 </div>
 </div>
 
-<!-- Portfolio -->
-<div id = "portfolio"></div>
-  <section class="py-2 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="h1font">My Portfolio</h1>
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-light">
+  <div class="container">
+      <h2 class="text-center">Portfolio</h2>
+      <p class="text-center text-muted">Some of the work I've done.</p>
+      <div class="row">
+          <div class="col-md-4 mb-4">
+              <div class="card">
+                  <img src="assets/Website design DAL banner.png" class="card-img-top" alt="Project 1">
+                  <div class="card-body-overlay">
+                      <h5 class="card-title">Website design</h5>
+                      <p class="card-text">Larp website</p>
+                      <a href="https://www.behance.net/gallery/215897367/Website-design" class="btn btn-primary">View Project</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-4">
+              <div class="card">
+                  <img src="assets/Website restyle banner.png" class="card-img-top" alt="Project 2">
+                  <div class="card-body-overlay">
+                      <h5 class="card-title">Restyling design</h5>
+                      <p class="card-text">Company website</p>
+                      <a href="https://www.behance.net/gallery/216049335/Website-restyling" class="btn btn-primary">View Project</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-4">
+              <div class="card">
+                  <img src="assets/HTML design character banner.png" class="card-img-top" alt="Project 3">
+                  <div class="card-body-overlay">
+                      <h5 class="card-title">CSS and HTML design</h5>
+                      <p class="card-text">Character card exercise</p>
+                      <a href="https://github.com/bunnydajiu/character-sheets/tree/main" class="btn btn-primary">View Project</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="assets/Mondrian project banner.png" class="card-img-top" alt="Project 3">
+                <div class="card-body-overlay">
+                    <h5 class="card-title">Mondrian project</h5>
+                    <p class="card-text">HTML only exercise</p>
+                    <a href="https://htmlpreview.github.io/?https://github.com/bunnydajiu/mondrian-project/blob/main/index.html" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+              <img src="assets/Tindog project banner.png" class="card-img-top" alt="Project 3">
+              <div class="card-body-overlay">
+                  <h5 class="card-title">Tindog project</h5>
+                  <p class="card-text">Bootstrap exercise</p>
+                  <a href="https://htmlpreview.github.io/?https://github.com/bunnydajiu/tindog-project/blob/main/index.html" class="btn btn-primary">View Project</a>
+              </div>
+          </div>
       </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="assets/Bootstrap components project banner.png" class="card-img-top" alt="Project 3">
+            <div class="card-body-overlay">
+                <h5 class="card-title">Bootstrap components project</h5>
+                <p class="card-text">Bootstrap exercise</p>
+                <a href="https://htmlpreview.github.io/?https://github.com/bunnydajiu/bootstrap_components-project/blob/main/index.html" class="btn btn-primary">View Project</a>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-        <!-- ITEM 1 -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#b94667"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Tindog project</text></svg>
-            <div class="card-body">
-              <p class="card-text">A Bootstrap project to create a web page with different snippets.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://htmlpreview.github.io/?https://github.com/bunnydajiu/tindog-project/blob/main/index.html">Preview</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://github.com/bunnydajiu/tindog-project">Code</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 2 -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#364fc9"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Bootstrap components</text></svg>
-            <div class="card-body">
-              <p class="card-text">This project is an exercise to use bootstrap components in a web page.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://htmlpreview.github.io/?https://github.com/bunnydajiu/bootstrap_components-project/blob/main/index.html">Preview</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://github.com/bunnydajiu/bootstrap_components-project">Code</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 3 -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#d2722d"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Mondrian project</text></svg>
-            <div class="card-body">
-              <p class="card-text">An exercise to recreate a Mondrian painting.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://htmlpreview.github.io/?https://github.com/bunnydajiu/mondrian-project/blob/main/index.html">Preview</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://github.com/bunnydajiu/mondrian-project">Code</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 4 -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#8b609f"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Character sheet</text></svg>
-            <div class="card-body">
-              <p class="card-text">Character sheets for roleplay games by post, done mainly with HTML and CSS.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://htmlpreview.github.io/?https://github.com/bunnydajiu/character-sheets/blob/main/LILY/Lily%20character-sheet-4.html">Preview</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://github.com/bunnydajiu/character-sheets/tree/main">Code</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 5 -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Coming soon...</text></svg>
-            <div class="card-body">
-              <p class="card-text">Coming soon...</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">Preview</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">Code</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 6 -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Coming soon...</text></svg>
-            <div class="card-body">
-              <p class="card-text">Coming soon...</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">Preview</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">Code</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-<!-- Space to add other thumbnails -->
       </div>
-    </div>
   </div>
-<!-- END Portfolio -->
+</section>
 
 <!-- Contact form -->
 <div id="contacts">
@@ -285,7 +215,7 @@
               <div>
                 <h2>Contacts</h2>
                 <p>
-                    You can use the contact form if you wish to contact me, otherwise you can check my social pages to inbox me, or you can write me an e-mail at:<br><br>
+                    The contact form is here just for showing the code. Unfortunately it cannot work within github, but feel free to use my social pages to contact me, or write me an e-mail:<br><br>
                     <b>bunnydajiu@gmail.com</b>
                 </p>
               </div>
@@ -313,8 +243,6 @@
         </div>
     </div>
 </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-j+2nWTQvB3Xv8cc/bZBw2QdLt3Q8g9bJajHl/czJUX2+T7ak6N8q5nyWmIfno4o0" crossorigin="anonymous"></script>
 <!-- END Contact form -->
 
 <!-- Footer -->
@@ -333,7 +261,10 @@
         </ul>
       </footer>
     </div>
-    <!-- Include Bootstrap's JavaScript bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-j+2nWTQvB3Xv8cc/bZBw2QdLt3Q8g9bJajHl/czJUX2+T7ak6N8q5nyWmIfno4o0" crossorigin="anonymous"></script>
+    <!-- Main js file -->
+    <script src="main.js"></script>
 </body>
 </html>
